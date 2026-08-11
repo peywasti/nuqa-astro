@@ -2,16 +2,475 @@
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="دامنه nuqa برای فروش" />
+    <title>nuqa — دامنه برای فروش</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
+
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#" class="logo">nuqa</a>
+      </div>
+    </nav>
+
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">nuqa</h1>
+        <p class="hero-badge">این دامنه برای فروش است</p>
+        <p class="hero-desc">
+          دامنه‌ای کوتاه، خاص و به‌یادماندنی. اگر به دنبال یک نام قوی برای برند
+          خود هستید، nuqa می‌تواند همان چیزی باشد که می‌خواهید.
+        </p>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature reveal">
+            <span class="feature-icon">01</span>
+            <h3>کوتاه و خاص</h3>
+            <p>
+              چهار حرف. آسان برای تایپ، آسان برای به خاطر سپردن. دامنه‌ای که در
+              ذهن می‌ماند.
+            </p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature-icon">02</span>
+            <h3>نام برندپذیر</h3>
+            <p>
+              nuqa می‌تواند در هر صنعتی جای بگیرد. از تکنولوژی تا مد، از هنر تا
+              تجارت.
+            </p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature-icon">03</span>
+            <h3>ارزش سرمایه‌گذاری</h3>
+            <p>
+              دامنه‌های کوتاه روزبه‌روز کمیاب‌تر می‌شوند. nuqa یک فرصت
+              سرمایه‌گذاری در آینده دیجیتال است.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="container">
+        <div class="offer-content reveal">
+          <p class="offer-lead">پیشنهاد خود را ارسال کنید</p>
+          <a href="mailto:hello@nuqa.com" class="offer-email">hello@nuqa.com</a>
+          <p class="offer-note">
+            تمام پیشنهادات بررسی می‌شوند. پاسخ در کمتر از ۲۴ ساعت.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <span class="footer-logo">nuqa</span>
+          <span class="footer-copy">© ۲۰۲۵ nuqa. تمامی حقوق محفوظ است.</span>
+        </div>
+      </div>
+    </footer>
+
+    <style is:global>
+      :root {
+        --bg: #0c0c0a;
+        --bg-raised: #141412;
+        --fg: #e8e4dc;
+        --fg-dim: #8a8580;
+        --accent: #c4a882;
+        --border: rgba(232, 228, 220, 0.08);
+        --font-fa: "Vazirmatn", system-ui, sans-serif;
+        --font-en: "Playfair Display", Georgia, serif;
+        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-fa);
+        background-color: var(--bg);
+        color: var(--fg);
+        line-height: 1.8;
+        overflow-x: hidden;
+        cursor: none;
+        direction: rtl;
+        text-align: right;
+      }
+
+      .grain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      }
+
+      .cursor {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: var(--accent);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        mix-blend-mode: difference;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.2s,
+          height 0.2s;
+      }
+
+      .cursor-follower {
+        position: fixed;
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--fg);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.3s,
+          height 0.3s,
+          border-color 0.3s;
+        opacity: 0.4;
+      }
+
+      @media (pointer: coarse) {
+        body {
+          cursor: auto;
+        }
+        .cursor,
+        .cursor-follower {
+          display: none;
+        }
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 1.5rem 0;
+        transition:
+          background 0.4s,
+          backdrop-filter 0.4s;
+      }
+
+      .nav.scrolled {
+        background: rgba(12, 12, 10, 0.8);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .logo {
+        font-family: var(--font-en);
+        font-size: 1.5rem;
+        color: var(--fg);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .hero {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding: 2rem;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 640px;
+      }
+
+      .hero-title {
+        font-family: var(--font-en);
+        font-size: clamp(5rem, 20vw, 14rem);
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--fg);
+      }
+
+      .hero-badge {
+        font-family: var(--font-fa);
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        border: 1px solid var(--border);
+        padding: 0.5rem 1.5rem;
+        border-radius: 100px;
+      }
+
+      .hero-desc {
+        font-size: 1rem;
+        color: var(--fg-dim);
+        max-width: 480px;
+        line-height: 2;
+        text-align: center;
+      }
+
+      .features {
+        padding: 8rem 0;
+        background: var(--bg-raised);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+
+      .feature {
+        text-align: right;
+      }
+
+      .feature-icon {
+        font-family: var(--font-en);
+        font-size: 0.875rem;
+        color: var(--accent);
+        font-style: italic;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .feature h3 {
+        font-family: var(--font-fa);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--fg);
+      }
+
+      .feature p {
+        font-size: 0.9375rem;
+        color: var(--fg-dim);
+        line-height: 1.9;
+      }
+
+      .offer {
+        padding: 10rem 0;
+        text-align: center;
+      }
+
+      .offer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .offer-lead {
+        font-family: var(--font-fa);
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        color: var(--fg-dim);
+        font-weight: 300;
+      }
+
+      .offer-email {
+        font-family: var(--font-en);
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--fg);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+        position: relative;
+        display: inline-block;
+        transition: color 0.3s;
+      }
+
+      .offer-email::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s var(--ease-out-expo);
+      }
+
+      .offer-email:hover {
+        color: var(--accent);
+      }
+
+      .offer-email:hover::after {
+        transform: scaleX(1);
+        transform-origin: right;
+      }
+
+      .offer-note {
+        font-size: 0.875rem;
+        color: var(--fg-dim);
+        margin-top: 1rem;
+      }
+
+      .footer {
+        padding: 3rem 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8125rem;
+        color: var(--fg-dim);
+      }
+
+      .footer-logo {
+        font-family: var(--font-en);
+        font-size: 1.25rem;
+        color: var(--fg);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s var(--ease-out-expo),
+          transform 0.8s var(--ease-out-expo);
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .features-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .hero-title {
+          font-size: clamp(4rem, 22vw, 7rem);
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+
+    <script>
+      const cursor = document.querySelector(".cursor");
+      const follower = document.querySelector(".cursor-follower");
+      let mouseX = 0,
+        mouseY = 0;
+      let followerX = 0,
+        followerY = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + "px";
+        cursor.style.top = mouseY + "px";
+      });
+
+      function animateFollower() {
+        followerX += (mouseX - followerX) * 0.12;
+        followerY += (mouseY - followerY) * 0.12;
+        follower.style.left = followerX + "px";
+        follower.style.top = followerY + "px";
+        requestAnimationFrame(animateFollower);
+      }
+      animateFollower();
+
+      document.querySelectorAll("a").forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          cursor.style.width = "12px";
+          cursor.style.height = "12px";
+          follower.style.width = "48px";
+          follower.style.height = "48px";
+          follower.style.borderColor = "var(--accent)";
+        });
+        el.addEventListener("mouseleave", () => {
+          cursor.style.width = "8px";
+          cursor.style.height = "8px";
+          follower.style.width = "32px";
+          follower.style.height = "32px";
+          follower.style.borderColor = "var(--fg)";
+        });
+      });
+
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealObserver.observe(el));
+    </script>
+  </body>
 </html>
