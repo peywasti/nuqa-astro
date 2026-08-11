@@ -11,21 +11,39 @@
     <title>nuqa — دامنه برای فروش</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
 
     <style is:global>
+      @font-face {
+        font-family: "Arad";
+        src: url("/fonts/Arad-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Playfair Display";
+        src: url("/fonts/PlayfairDisplay-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Playfair Display";
+        src: url("/fonts/PlayfairDisplay-latin.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
       :root {
         --bg: #0c0c0a;
         --fg: #e8e4dc;
         --fg-dim: #8a8580;
         --accent: #c4a882;
         --border: rgba(232, 228, 220, 0.1);
-        --font-fa: "Vazirmatn", system-ui, sans-serif;
+        --font-fa: "Arad", system-ui, sans-serif;
         --font-en: "Playfair Display", Georgia, serif;
       }
 
